@@ -1,0 +1,142 @@
+
+body, html {
+    height: 1000px;
+    font-family: 'Allerta Stencil';font-size: 18px;
+   
+}
+
+
+
+.main-wrapper {
+	
+	height: 100%; 
+	background-image: url("papilotne.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	
+}
+
+.main-wrapper h1 {
+	text-align: center;
+	background: rgba(90,90,90,0.4);
+
+}
+
+
+.wrapper {
+	border-radius: 18px;
+	padding-left: 10%
+	padding-right: 10%;
+	width: 80%;
+	margin-top: 10px;
+	background: rgba(192,192,192,0.4);
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+.quiz {
+	background: rgba(90,90,90,0.4);
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+    width: 80%;
+    padding-left: 10%
+	padding-right: 10%;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+
+
+p {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+
+.answers li { 
+list-style: upper-alpha; 
+} 
+
+label { 
+margin-left: 0.5em; 
+cursor: pointer; 
+} 
+
+#check { 
+background: #dddada; 
+color: 000000; 
+padding: 3px; 
+text-align: center; 
+width: 200px; 
+cursor: pointer; 
+border: 1px solid gray; 
+}
+
+#check:hover { 
+background: #3d91b8; 
+color: #ffffff; 
+padding: 3px; 
+text-align: center; 
+width: 200px; 
+cursor: pointer; 
+border: 1px solid gray; 
+} 
+
+#categorylist { 
+margin-top: 6px; 
+display: none; 
+} 
+
+#category1 { 
+display: none; 
+border-radius: 18px;
+padding-left: 10%
+padding-right: 10%;
+width: 80%;
+margin-top: 80px;
+background: rgba(192,192,192,0.4);
+margin-left: auto;
+margin-right: auto
+}
+
+#category1 p {
+	color: black;
+}
+
+
+#closing {
+display: none;
+font-style: italic;
+}
+
+#check {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#wrapper_main{
+	margin-bottom: 30px;
+}
+
+#category2 {
+	display: none; 
+	position: relative;
+  	padding-bottom: 56.25%;
+  	
+}
+
+#category2 iframe {
+	position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+  
+}
+
