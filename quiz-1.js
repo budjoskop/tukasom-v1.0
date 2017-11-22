@@ -13,7 +13,7 @@ else {
     document.getElementById("check").value = "";
 }                        
             
-
+// ovde se menja kviz
 var cat1 = ($("input[@name=q1]:checked").val() != "a"); 
 var cat2 = ($("input[@name=q1]:checked").val() == "a");         
         
