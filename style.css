@@ -10,7 +10,7 @@ body, html {
 .main-wrapper {
 	
 	height: 100%; 
-	background-image: url("star.jpg");
+	background-image: url("background1.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -52,13 +52,17 @@ body, html {
 .question p {
 	line-height: 10%;
 }
+.question {
+	text-align: justify;
+	padding-left: 5px;
+	padding-right: 5px;
+}
 
 p {
   text-align: center;
   vertical-align: middle;
   
 }
-
 
 .answers li { 
 list-style: upper-alpha; 
@@ -129,7 +133,6 @@ font-style: italic;
 	display: none; 
 	position: relative;
   	padding-bottom: 56.25%;
-  	
 }
 
 #category2 iframe {
@@ -137,7 +140,5 @@ font-style: italic;
     left: 5%;
     width: 90%;
     height: 90%;
-
-  
 }
 
