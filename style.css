@@ -49,13 +49,14 @@ body, html {
     font-size: 14px;
     padding-bottom: 10px;
 }
-
-
+.question p {
+	line-height: 10%;
+}
 
 p {
   text-align: center;
   vertical-align: middle;
-  line-height: 60px;
+  
 }
 
 
