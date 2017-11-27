@@ -10,7 +10,11 @@ body, html {
 .main-wrapper {
 	
 	height: 100%; 
+<<<<<<< HEAD
 	background-image: url("jacht.jpg");
+=======
+	background-image: url("zarf.jpg");
+>>>>>>> b675db12900325a9ff715caf0412e17c9cb37997
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
