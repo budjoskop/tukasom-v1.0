@@ -10,7 +10,7 @@ body, html {
 .main-wrapper {
 	
 	height: 100%; 
-	background-image: url("star.jpg");
+	background-image: url("jacht.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -52,13 +52,18 @@ body, html {
 .question p {
 	line-height: 10%;
 }
+.question {
+	padding-top: 10px;
+	text-align: justify;
+	padding-left: 5px;
+	padding-right: 5px;
+}
 
 p {
   text-align: center;
   vertical-align: middle;
   
 }
-
 
 .answers li { 
 list-style: upper-alpha; 
@@ -70,17 +75,20 @@ cursor: pointer;
 } 
 
 #check { 
-background: #dddada; 
+border-radius: 18px;
+margin-left: auto;
+margin-right: auto;
+background: rgba(10,40,250,0.7);
 color: 000000; 
 padding: 3px; 
 text-align: center; 
 width: 200px; 
 cursor: pointer; 
-border: 1px solid gray; 
+border: 1px solid black; 
 }
 
 #check:hover { 
-background: #3d91b8; 
+background: rgba(50,50,250,0.4);
 color: #ffffff; 
 padding: 3px; 
 text-align: center; 
@@ -95,13 +103,16 @@ display: none;
 } 
 
 #category1 { 
+font-size: 18px;
 display: none; 
 border-radius: 18px;
+border: 1px solid black;
 padding-left: 10%
 padding-right: 10%;
 width: 80%;
-margin-top: 80px;
-background: rgba(192,192,192,0.4);
+height: 40px;
+line-height: 10px;
+background: rgba(192,0,0,0.4);
 margin-left: auto;
 margin-right: auto
 }
@@ -121,7 +132,8 @@ font-style: italic;
 	margin-bottom: 30px;
 }
 
-#wrapper_main{
+.wrapper_main{
+	padding-top: 20px;
 	margin-bottom: 30px;
 }
 
@@ -129,7 +141,6 @@ font-style: italic;
 	display: none; 
 	position: relative;
   	padding-bottom: 56.25%;
-  	
 }
 
 #category2 iframe {
@@ -137,7 +148,4 @@ font-style: italic;
     left: 5%;
     width: 90%;
     height: 90%;
-
-  
 }
-
