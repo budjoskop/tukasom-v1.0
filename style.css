@@ -102,7 +102,7 @@ margin-top: 6px;
 display: none; 
 } 
 
-#category1 { 
+#false { 
 font-size: 18px;
 display: none; 
 border-radius: 18px;
@@ -117,7 +117,7 @@ margin-left: auto;
 margin-right: auto
 }
 
-#category1 p {
+#false p {
 	color: black;
 }
 
@@ -137,13 +137,13 @@ font-style: italic;
 	margin-bottom: 30px;
 }
 
-#category2 {
+#true {
 	display: none; 
 	position: relative;
   	padding-bottom: 56.25%;
 }
 
-#category2 iframe {
+#true iframe {
 	position: absolute;
     left: 5%;
     width: 90%;
