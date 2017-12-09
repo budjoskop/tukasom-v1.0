@@ -18,8 +18,10 @@ else {
 var cat1 = ($("input[@name=q1]:checked").val() != "a"); 
 var cat2 = ($("input[@name=q1]:checked").val() == "a");           
 
-if (cat1) { $("#false").show("slow");$("#true").hide("slow"); };   
-if (cat2) { $("#true").show("slow"); $("#false").hide("slow"); };                         
+
+                     
+if (cat1) { $("#category1").show("slow");$("#category2").hide("slow"); };   
+if (cat2) { $("#category2").show("slow"); $("#category1").hide("slow"); };                         
 
 { $("#closing").show("slow"); };
 }
