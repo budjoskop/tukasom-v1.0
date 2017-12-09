@@ -10,7 +10,7 @@ body, html {
 .main-wrapper {
 	
 	height: 100%; 
-	background-image: url("reflection.jpg");
+	background-image: url("diamonds.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -102,7 +102,7 @@ margin-top: 6px;
 display: none; 
 } 
 
-#false { 
+#category1 { 
 font-size: 18px;
 display: none; 
 border-radius: 18px;
@@ -117,7 +117,7 @@ margin-left: auto;
 margin-right: auto
 }
 
-#false p {
+#category1 p {
 	color: black;
 }
 
@@ -137,13 +137,13 @@ font-style: italic;
 	margin-bottom: 30px;
 }
 
-#true {
+#category2 {
 	display: none; 
 	position: relative;
   	padding-bottom: 56.25%;
 }
 
-#true iframe {
+#category2 iframe {
 	position: absolute;
     left: 5%;
     width: 90%;
