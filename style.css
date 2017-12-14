@@ -27,9 +27,9 @@ body, html {
 
 .wrapper {
 	border-radius: 18px;
-	padding-left: 10%
-	padding-right: 10%;
-	width: 80%;
+	padding-left: 2.5%
+	padding-right: 2.5%;
+	width: 95%;
 	margin-top: 10px;
 	background: rgba(192,192,192,0.4);
 	display: block;
@@ -64,10 +64,6 @@ p {
   vertical-align: middle;
   
 }
-
-.answers li { 
-list-style: upper-alpha; 
-} 
 
 label { 
 margin-left: 0.5em; 
