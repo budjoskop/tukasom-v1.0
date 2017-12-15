@@ -60,6 +60,10 @@ body, html {
 	padding-right: 5px;
 }
 
+.answers {
+	padding-left: 4px;
+}
+
 p {
   text-align: center;
   vertical-align: middle;
