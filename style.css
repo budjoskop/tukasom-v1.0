@@ -2,21 +2,21 @@
 body, html {
     height: 1000px;
     font-family: 'Allerta Stencil';font-size: 18px;
-   
+
 }
 
 
 
 .main-wrapper {
-	
-	height: 100%; 
+
+	height: 100%;
 	/*background-image: url("tramLisabo.jpg");*/
-	background: rgba(75,45,129,0.9);
+	background: rgba(15,68,126,0.9);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	overflow: hidden;
-	
+
 }
 
 .main-wrapper h1 {
@@ -67,45 +67,45 @@ body, html {
 p {
   text-align: center;
   vertical-align: middle;
-  
+
 }
 
-label { 
-margin-left: 0.5em; 
-cursor: pointer; 
-} 
+label {
+margin-left: 0.5em;
+cursor: pointer;
+}
 
-#check { 
+#check {
 border-radius: 18px;
 margin-left: auto;
 margin-right: auto;
 background: rgba(10,40,250,0.7);
-color: 000000; 
-padding: 3px; 
-text-align: center; 
-width: 200px; 
-cursor: pointer; 
-border: 1px solid black; 
+color: 000000;
+padding: 3px;
+text-align: center;
+width: 200px;
+cursor: pointer;
+border: 1px solid black;
 }
 
-#check:hover { 
+#check:hover {
 background: rgba(50,50,250,0.4);
-color: #ffffff; 
-padding: 3px; 
-text-align: center; 
-width: 200px; 
-cursor: pointer; 
-border: 1px solid gray; 
-} 
+color: #ffffff;
+padding: 3px;
+text-align: center;
+width: 200px;
+cursor: pointer;
+border: 1px solid gray;
+}
 
-#categorylist { 
-margin-top: 6px; 
-display: none; 
-} 
+#categorylist {
+margin-top: 6px;
+display: none;
+}
 
-#category1 { 
+#category1 {
 font-size: 18px;
-display: none; 
+display: none;
 border-radius: 18px;
 border: 1px solid black;
 padding-left: 10%
@@ -139,7 +139,7 @@ font-style: italic;
 }
 
 #category2 {
-	display: none; 
+	display: none;
 	position: relative;
   	padding-bottom: 56.25%;
 }
@@ -152,9 +152,9 @@ font-style: italic;
 }
 
 .balloon {
- 
+
  float: right;
- display: inline-block;  
+ display: inline-block;
   width:65px;
   height:100px;
   background:hsl(215,50%,65%);
@@ -199,8 +199,3 @@ font-style: italic;
 
 .balloon:nth-child(5){ background:hsl(23,55%,57%); animation-duration:5s; }
 .balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
-
-
-
-
-
