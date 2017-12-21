@@ -11,7 +11,7 @@ body, html {
 
 	height: 100%;
 	/*background-image: url("tramLisabo.jpg");*/
-	background:rgb(59, 149, 207);
+	background:rgb(102, 46, 61);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -191,7 +191,7 @@ font-style: italic;
 .balloon:nth-child(2){ background:hsl(245,40%,65%); animation-duration:6.5s; }
 .balloon:nth-child(2):before { color:hsl(245,40%,65%);  }
 
-.balloon:nth-child(3){ background:hsl(139,50%,60%); animation-duration:3s; }
+.balloon:nth-child(3){ background:hsl(139,50%,60%); animation-duration:3s;}
 .balloon:nth-child(3):before { color:hsl(139,30%,50%);  }
 
 .balloon:nth-child(4){ background:hsl(59,50%,58%); animation-duration:4.5s; }
