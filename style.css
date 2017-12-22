@@ -11,7 +11,7 @@ body, html {
 
 	height: 100%;
 	/*background-image: url("tramLisabo.jpg");*/
-	background: rgb(209, 50, 107);
+	background: -webkit-linear-gradient(right, #fff207 0%,#fff207 50%,#0a0e0a 51%,#0a0809 100%);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
