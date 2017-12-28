@@ -11,7 +11,7 @@ body, html {
 
 	height: 100%;
 	/*background-image: url("tramLisabo.jpg");*/
-	background: rgb(16, 162, 244);
+	background: rgb(157, 244, 16);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -79,7 +79,7 @@ cursor: pointer;
 border-radius: 18px;
 margin-left: auto;
 margin-right: auto;
-background: rgba(10,40,250,0.7);
+background: rgba(250, 10, 10, 0.7);
 color: 000000;
 padding: 3px;
 text-align: center;
@@ -157,7 +157,7 @@ font-style: italic;
  display: inline-block;
   width:65px;
   height:100px;
-  background:hsl(215,50%,65%);
+  background:rgb(49, 9, 105);
   border-radius:80%;
   position:relative;
   box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
