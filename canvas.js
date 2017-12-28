@@ -24,7 +24,7 @@ canvas.width = W;
 canvas.height = H;
 
 // Some variables for later use
-var particleCount = 20,
+var particleCount = 10,
 	particles = [],
 	minDist = 150,
 	dist;
@@ -179,8 +179,8 @@ function distance(p1, p2) {
 
 		// Some acceleration for the partcles
 		// depending upon their distance
-		var ax = dx/20000000000,
-			ay = dy/20000000000;
+		var ax = dx/2000000000000,
+			ay = dy/2000000000000;
 
 		// Apply the acceleration on the particles
 		p1.vx -= ax;
