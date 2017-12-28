@@ -16,7 +16,7 @@ else {
 // ovde se menja kviz
 
 var cat1 = ($("input[@name=q1]:checked").val() != "b");
-var cat2 = ($("input[@name=q1]:checked").val() == "b");         
+var cat2 = ($("input[@name=q1]:checked").val() == "b");
 
 
 
