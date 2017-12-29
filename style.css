@@ -65,6 +65,7 @@ position: fixed;
 	padding-right: 10%;
     font-size: 14px;
     padding-bottom: 10px;
+    position: relative;
 }
 .question p {
 	line-height: 10%;
@@ -169,13 +170,14 @@ font-style: italic;
 
 .balloon {
 
- float: right;
- display: inline-block;
+  float: right;
+  right: 5px;
+  display: inline-block;
   width:65px;
   height:100px;
   background:rgb(49, 9, 105);
   border-radius:80%;
-  position:relative;
+  position:absolute;
   box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
   margin:20px 30px;
   transition:transform 0.5s ease;
