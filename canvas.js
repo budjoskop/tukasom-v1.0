@@ -33,7 +33,7 @@ var particleCount = 10,
 
 function paintCanvas() {
 	// Set the fill color to black
-	ctx.fillStyle = "rgb(115, 174, 222)";
+	ctx.fillStyle = "rgb(27, 87, 136)";
 
 	// This will create a rectangle of white color from the
 	// top left (0,0) to the bottom right corner (W,H)
