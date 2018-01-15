@@ -21,19 +21,19 @@ var _y = new Array(num);
 var x, y;
 
 var c = document.getElementById('canvas');
-$ = c.getContext("2d");
+var ctx = c.getContext("2d");
 var w = c.width = window.innerWidth;
 var h = c.height = window.innerHeight;
 
 var draw = function() {
-  $.clearRect(-c.width / 2, -c.height / 2, c.width, c.height);
+  ctx.clearRect(-c.width / 2, -c.height / 2, c.width, c.height);
   x.xd_();
   y.yd_();
 
-  $.beginPath();
-  $.fillStyle = 'hsla(0,0%,5%,.5)';
-  $.arc((x.x += x.a), (y.y += y.b), 20, 0, 2 * Math.PI, true);
-  $.fill();
+  ctx.beginPath();
+  ctx.fillStyle = 'hsla(0,0%,5%,.5)';
+  ctx.arc((x.x += x.a), (y.y += y.b), 20, 0, 2 * Math.PI, true);
+  ctx.fill();
   prevX[_xct] = x.x;
   prevY[_yct] = y.y;
   _xct++;
@@ -41,18 +41,18 @@ var draw = function() {
   if (_xct == mLn) _xct = 0;
   if (_yct == mLn) _yct = 0;
 
-  $.beginPath();
-  $.moveTo(x.x, y.y);
-  $.lineWidth = 15;
-  $.strokeStyle = 'hsla(0,0%,5%,1)';
-  $.lineTo(prevX[_x[1]], prevY[_y[1]]);
-  $.stroke();
+  ctx.beginPath();
+  ctx.moveTo(x.x, y.y);
+  ctx.lineWidth = 15;
+  ctx.strokeStyle = 'hsla(0,0%,5%,1)';
+  ctx.lineTo(prevX[_x[1]], prevY[_y[1]]);
+  ctx.stroke();
   for (var i = 0; i < num - 1; i++) {
-    $.beginPath();
-    $.moveTo(prevX[_x[i]], prevY[_y[i]]);
-    $.lineWidth = 5;
-    $.lineTo(prevX[_x[i + 1]], prevY[_y[i + 1]]);
-    $.stroke();
+    ctx.beginPath();
+    ctx.moveTo(prevX[_x[i]], prevY[_y[i]]);
+    ctx.lineWidth = 5;
+    ctx.lineTo(prevX[_x[i + 1]], prevY[_y[i + 1]]);
+    ctx.stroke();
   }
   var a = [1 / 100];
   var colors = ['hsla(310, 95%, 55%, 1)',
@@ -73,46 +73,46 @@ var draw = function() {
 
       //ring one (closests to inner circle)
       //shadow mimic
-      $.lineWidth = 10;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 31, 0, 2 * Math.PI, true);
-      $.fillStyle = 'hsla(0,0%,0%,0.8)';
-      $.fill();
+      ctx.lineWidth = 10;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 31, 0, 2 * Math.PI, true);
+      ctx.fillStyle = 'hsla(0,0%,0%,0.8)';
+      ctx.fill();
       //color
-      $.lineWidth = 10;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 30, 0, 2 * Math.PI, true);
-      $.fillStyle = colors[i];
-      $.fill();
+      ctx.lineWidth = 10;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 30, 0, 2 * Math.PI, true);
+      ctx.fillStyle = colors[i];
+      ctx.fill();
 
       //inner circle
-      $.lineWidth = 10;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 10, 0, 2 * Math.PI, true);
-      $.fillStyle = 'hsla(0,5%,5%,1)';
-      $.fill();
+      ctx.lineWidth = 10;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 10, 0, 2 * Math.PI, true);
+      ctx.fillStyle = 'hsla(0,5%,5%,1)';
+      ctx.fill();
 
       //outer ring
-      $.lineWidth = 5;
-      $.strokeStyle = 'hsla(0,0%,5%,.8)';
-      $.lineWidth = 20;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 88, 0, 2 * Math.PI, true);
-      $.stroke();
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = 'hsla(0,0%,5%,.8)';
+      ctx.lineWidth = 20;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 88, 0, 2 * Math.PI, true);
+      ctx.stroke();
 
       //second ring (closest to outer ring)
       //shadow mimic
-      $.strokeStyle = 'hsla(0,0%,0%,0.8)';
-      $.lineWidth = 20;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 57, 0, 2 * Math.PI, true);
-      $.stroke();
+      ctx.strokeStyle = 'hsla(0,0%,0%,0.8)';
+      ctx.lineWidth = 20;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 57, 0, 2 * Math.PI, true);
+      ctx.stroke();
       //color
-      $.strokeStyle = colors[i];
-      $.lineWidth = 20;
-      $.beginPath();
-      $.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 55, 0, 2 * Math.PI, true);
-      $.stroke();
+      ctx.strokeStyle = colors[i];
+      ctx.lineWidth = 20;
+      ctx.beginPath();
+      ctx.arc(prevX[_x[i]] - 15, prevY[_y[i]] - 15, 55, 0, 2 * Math.PI, true);
+      ctx.stroke();
     }
   }
 };
@@ -186,7 +186,7 @@ drx.prototype.xd_ = function() {
   }
 };
 var ready = function() {
-  $.translate(w / 2, h / 2);
+  ctx.translate(w / 2, h / 2);
   for (var i = 0; i < mLn; i++) {
     prevX[i] = w;
     prevY[i] = h;
