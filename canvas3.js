@@ -1,37 +1,43 @@
-window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            window.oRequestAnimationFrame      ||
-            window.msRequestAnimationFrame     ||
-            function (loop) { window.setTimeout(callback, 1000 / 60); };
-})();
-
 var c = document.getElementById('canvas');
-    var $ = c.getContext('2d');
-    var w = c.width = window.innerWidth;
-    var h = c.height = window.innerHeight;
-    var angle = .666;
-    var max_s = w;
-    run();
+var ctx = c.getContext('2d');
+var w = c.width = window.innerWidth;
+var h = c.height = window.innerHeight;
+F = 0;
+run();
 
-function run() {
-  go();
-  window.requestAnimFrame(run);
+function D() {
+  F++;
+  ctx.fillStyle = 'hsla(0,0%,95%,0.8)';
+  ctx.fillRect(0, 0, w, h);
+  for (i = 50; i--;) {
+    t = F / -8 - i * 6;
+    ctx.fillStyle = 'hsla(0, 0%, 5%,1)';
+    E(-50 + i * Math.cos(t), 8 * i + 3 * Math.sin(t));
+    E(125 + i * Math.cos(t), 4 * i + 3 * Math.sin(t));
+
+  }
+};
+function E(a, b) {
+  G(a, b);
+  G(-a, b);
+  G(-a, -b);
+  G(a, -b);
+  G(b, -a);
+  G(-b, -a);
+  G(-b, a);
+  G(b, a);
 }
 
-function go() {
-  $.save();
-  $.translate(w/2, h/2);
-  $.lineWidth = 2;
-
-  for (var i=0; i<3000; i++) {
-    $.strokeStyle = 'hsla(0,5%, 5%, 0.4)';
-    $.strokeRect(max_s/2, max_s/2, max_s, max_s);
-    $.rotate(angle * Math.PI);
-    $.scale(0.666, 0.666);
-  }
-  $.restore();
-  angle += .666;
-
+function G(a, b) {
+  ctx.beginPath();
+  ctx.arc(w / 2 + a, h / 2 + b, 1, 0, Math.PI*2, false);
+  ctx.fill();
+}
+window.addEventListener('resize',function(){
+  c.width = w = window.innerWidth;
+  c.height = h =  window.innerHeight;
+}, false);
+function run() {
+  window.requestAnimationFrame(run);
+  D();
 }
