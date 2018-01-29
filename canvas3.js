@@ -1,47 +1,211 @@
-var canvasLoader = function(){
+var size = Math.min(window.innerWidth, window.innerHeight) / 50;
+var angle = 0;
+var iterator = 0;
+var speed = 1.5;
+var colors = [
+  'rgb(19, 166, 144)',
+  'rgb(145, 219, 207)',
+  'rgb(235, 218, 204)'
+];
+var loopId, canvas, ctx;
 
-  var self = this;
-  window.requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}();
+document.addEventListener("DOMContentLoaded", function(event) {
+  init();
+});
 
-  self.init = function(){
-    self.canvas = document.getElementById('canvas');
-    self.ctx = self.canvas.getContext('2d');
-    self.ctx.lineWidth = .5;
-    self.ctx.strokeStyle = 'rgba(0,0,0,.75)';
-    self.count = 75;
-    self.rotation = 270*(Math.PI/180);
-    self.speed = 6;
-    self.canvasLoop();
-  };
+function init() {
+  //Get canvas & context
+  canvas = document.getElementById("canvas");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx = canvas.getContext("2d");
+  size = Math.min(window.innerWidth, window.innerHeight) / 50;
+  //initialise animation
+  startAnimation();
+}
 
-  self.updateLoader = function(){
-    self.rotation += self.speed/100;
-  };
+function animationLoop(timeStamp) {
+  // 1 - Clear & resize
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx = canvas.getContext("2d");
+  size = Math.min(window.innerWidth, window.innerHeight) / 50;
+  // 2 Draw
+  drawCat();
+  // 3 Move
+  updateTailAngle();
+  // call again mainloop after 16.6ms (corresponds to 60 frames/second)
+  id = requestAnimationFrame(animationLoop);
+}
 
-  self.renderLoader = function(){
-    self.ctx.save();
-    self.ctx.globalCompositeOperation = 'source-over';
-    self.ctx.translate(125, 125);
-    self.ctx.rotate(self.rotation);
-    var i = self.count;
-    while(i--){
-      self.ctx.beginPath();
-      self.ctx.arc(0, 0, i+(Math.random()*35), Math.random(), Math.PI/3+(Math.random()/12), false);
-      self.ctx.stroke();
-    }
-    self.ctx.restore();
-  };
+function startAnimation() {
+  loopId = requestAnimationFrame(animationLoop);
+}
 
-  self.canvasLoop = function(){
-    requestAnimFrame(self.canvasLoop, self.canvas);
-    self.ctx.globalCompositeOperation = 'destination-out';
-    self.ctx.fillStyle = 'rgba(0,0,0,.03)';
-    self.ctx.fillRect(0,0,250,250);
-    self.updateLoader();
-    self.renderLoader();
-  };
+function stopAnimation() {
+  if (loopId) {
+    cancelAnimationFrame(loopId);
+  }
+}
 
-};
+function drawCat() {
+  drawBody();
+  drawHead();
+  drawTail();
+}
 
-var loader = new canvasLoader();
-loader.init();
+function updateTailAngle() {
+  iterator += speed;
+  angle = Math.sin(iterator * Math.PI / 180) * 2.5;
+  /*if (iterator >= 180 || iterator <= 0){
+		speed = -speed;
+	}*/
+  size = $(window).width() / 40;
+}
+
+function drawBody() {
+
+  ctx.save();
+
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+
+  //cuerpo 1
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(-5 * size, 12 * size);
+  ctx.lineTo(12 * size, 12 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[2];
+  ctx.fill();
+
+  //cuerpo 2
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(12 * size, 12 * size);
+  ctx.lineTo(10 * size, -5 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //cuerpo 3
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(10 * size, -5 * size);
+  ctx.lineTo(3 * size, -14 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[1];
+  ctx.fill();
+
+  ctx.restore();
+}
+
+function drawHead() {
+
+  ctx.save();
+
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+
+  //cabeza
+  ctx.beginPath();
+  ctx.moveTo(1 * size, -8 * size);
+  ctx.lineTo(-4 * size, -8 * size);
+  ctx.lineTo(-6 * size, -15 * size);
+  ctx.lineTo(4 * size, -15 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[1];
+  ctx.fill();
+
+  //nariz
+  ctx.beginPath();
+  ctx.moveTo(-2 * size, -10 * size);
+  ctx.lineTo(-3 * size, -11 * size);
+  ctx.lineTo(-1 * size, -11 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //oreja 1
+  ctx.beginPath();
+  ctx.moveTo(-3 * size, -15 * size);
+  ctx.lineTo(-6 * size, -16 * size);
+  ctx.lineTo(-4 * size, -20 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //oreja 2
+  ctx.beginPath();
+  ctx.moveTo(1 * size, -15 * size);
+  ctx.lineTo(4 * size, -16 * size);
+  ctx.lineTo(2 * size, -21 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //ojo 1
+  ctx.beginPath();
+  ctx.moveTo(-5 * size, -12 * size);
+  ctx.lineTo(-3 * size, -12 * size);
+  ctx.closePath();
+  ctx.lineWidth = size * 0.2;
+  ctx.strokeStyle = colors[0];
+  ctx.stroke();
+
+  //ojo 2
+  ctx.beginPath();
+  ctx.moveTo(-1 * size, -12 * size);
+  ctx.lineTo(2 * size, -12 * size);
+  ctx.closePath();
+  ctx.lineWidth = size * 0.2;
+  ctx.strokeStyle = colors[0];
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function drawTail() {
+
+  ctx.save();
+
+  ctx.translate(canvas.width / 2 + 12 * size, canvas.height / 2 + 12 * size);
+  ctx.rotate(angle * Math.PI / 180);
+
+  //cola 1
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(2 * size, -13 * size);
+  ctx.lineTo(0, -13 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //cola 2
+  ctx.beginPath();
+  ctx.moveTo(0, -13 * size);
+  ctx.lineTo(2 * size, -13 * size);
+  ctx.lineTo(-2 * size, -19 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[0];
+  ctx.fill();
+
+  //cola 3
+  ctx.beginPath();
+  ctx.moveTo(-2 * size, -19 * size);
+  ctx.lineTo(-1 * size, -17.5 * size);
+  ctx.lineTo(2 * size, -23 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[1];
+  ctx.fill();
+
+  //cola 4
+  ctx.beginPath();
+  ctx.moveTo(2 * size, -23 * size);
+  ctx.lineTo(3 * size, -19 * size);
+  ctx.lineTo(1 * size, -21.2 * size);
+  ctx.closePath();
+  ctx.fillStyle = colors[1];
+  ctx.fill();
+
+  ctx.restore();
+}
