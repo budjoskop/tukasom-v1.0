@@ -12,39 +12,33 @@
 <body>
 	<canvas id="canvas">	</canvas>
 
-<div class="main-wrapper">
+	<div class="main-wrapper">
 
-<h1>TUKASOM v 1.5 </h1>
+	<h1>TUKASOM v 1.5 </h1>
+		<p id="demo"></p>
+	<div class="wrapper">
 
-<div class="wrapper">
 
 
 
-				<p id="demo"></p>
-
-				<div class="quiz">
-
-					<p class="question">Koja je najveća izmerena brzina loptice za stoni tenis, prilikom odbijanja od površinu stola?</p>
-							<ul class="answers">
-								<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">90 Km/h</label> <div class="balloon"></div><br/>
-								<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">180 Km/h</label><br/>
-								<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">20 Km/h</label><br/>
-								<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">80 Km/h</label><br/>
-							</ul>
-							<div id="check">
-								Check!
-							</div>
-					<div id="category1">
-						<p><strong> WRONG!!! <strong></p>
+					<div id="picbox">
+					  <span id="boxbuttons">
+					    <span class="button">
+					      <span id="counter">0</span>
+					      Clicks
+					    </span>
+					    <span class="button">
+					      <a onclick="ResetGame();">Reset</a>
+					    </span>
+					  </span>
+					  <div id="boxcard"></div>
 					</div>
-			</div>
-		<div class="wrapper_main">
-				<div id="category2">
-					<iframe src="https://www.youtube.com/embed/59Q_lhgGANc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	</div>
-</div>
+
 
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="memory.js"></script>
+
 <script type="text/javascript" src="quiz-1.js"></script>
 <script type="text/javascript" src="counter.js"></script>
 <script type="text/javascript" src="canvas3.js"></script>
